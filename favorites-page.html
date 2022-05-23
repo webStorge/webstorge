@@ -1,4 +1,3 @@
-<?php include  $_SERVER['DOCUMENT_ROOT']."/front-back(상훈)/php/db.php"; ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -86,7 +85,7 @@
   <!-- <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search"> -->
   <div class="navbar-nav">
     <div class="nav-item text-nowrap">
-      <a class="nav-link px-3" href="login/Logout.php">Log out</a>
+      <a class="nav-link px-3" href="./login_resist.html">Log out</a>
     </div>
   </div>
 </header>
@@ -103,8 +102,6 @@
                 </svg>
               모든 파일
             </a>
-          </li>
-          <li class="nav-item">
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./favorites-page.html">
@@ -129,13 +126,13 @@
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">모든 파일</h1>
-        	<form action="./php/upload.php" method="post" enctype="multipart/form-data">
-	        	<div class="btn-group me-2">    
-	            	<input id="my-input" type="file" name='my-input' onchange="form.submit()"/>
-	            	<button type="button" id="uploadBtn" class="btn btn-sm btn-outline-secondary" onclick='onClickUpload()'>&nbsp업로드&nbsp</button>
-	        	</div>
-	        </form>
+        <h1 class="h2">즐겨찾기</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <div class="btn-group me-2">    
+            <input id="my-input" type="file" />
+            <button type="button" id="uploadBtn" class="btn btn-sm btn-outline-secondary" onclick='onClickUpload()'>&nbsp업로드&nbsp</button>
+          </div>
+        </div>
       </div>
 
       <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
@@ -143,30 +140,110 @@
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              <th scope="col"><font size="5">번호</th></font>
-              <th scope="col"><font size="5">파일명</th></font>
-              <th scope="col"><font size="5">용량</th></font>
-              <th scope="col"><font size="5">날짜</th></font>
+              <th scope="col"><font size='5'>번호<font size='5'></th>
+              <th scope="col"><font size='5'>파일명<font size='5'></th>
+              <th scope="col"><font size='5'>용량<font size='5'></th>
+              <th scope="col"><font size='5'>날짜<font size='5'></th>
             </tr>
           </thead>
-          <?php
-        	$sql = query("select * from FileDownload;");
-        	$i = 0;
-			while($board=$sql->fetch_array())
-			{ ?>
-				 <tbody>
-		            <tr>
-		              <td><font size="5"><?php echo $i; $i = $i +1;?></font></td>
-		              <td onClick = "location.href='php/download.php?file=<?php echo $board['uname'] ?>'"><font size="5"><?php echo $board['name']; ?></font></td>
-		              <td><font size="5"><?php echo $board['size']; ?></font></td>
-		              <td><font size="5"><?php echo $board['date']; ?></font></td>
-		              <td><button type="button" id="btn" class="btn btn-warning"><font size="4">즐겨찾기</font></button></td>
-		              <td><button type="button" id="btn" class="btn btn-secondary btn-default" onClick = "location.href='php/delete.php?uname=<?php echo $board['uname'] ?>'"><font size="4">삭제</font></button></td>
-		            </tr>
-		        </tbody>
-		      <?php } ?>
-         
-          
+          <!-- <tbody>
+            <tr>
+              <td>1</td>
+              <td>random</td>
+              <td>MB</td>
+              <td>2022-05-18</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>placeholder</td>
+              <td>MB</td>
+              <td>2022-05-18</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>data</td>
+              <td>MB</td>
+              <td>2022-05-18</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>information</td>
+              <td>MB</td>
+              <td>2022-05-18</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>text</td>
+              <td>MB</td>
+              <td>2022-05-18</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>dashboard</td>
+              <td>MB</td>
+              <td>2022-05-18</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>dashboard</td>
+              <td>MB</td>
+              <td>2022-05-18</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>placeholder</td>
+              <td>MB</td>
+              <td>2022-05-18</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>random</td>
+              <td>MB</td>
+              <td>2022-05-18</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>placeholder</td>
+              <td>KB</td>
+              <td>2022-05-18</td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td>data</td>
+              <td>KB</td>
+              <td>2022-05-18</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>information</td>
+              <td>KB</td>
+              <td>2022-05-18</td>
+            </tr>
+            <tr>
+              <td>13</td>
+              <td>text</td>
+              <td>GB</td>
+              <td>2022-05-18</td>
+            </tr>
+            <tr>
+              <td>14</td>
+              <td>dashboard</td>
+              <td>GB</td>
+              <td>2022-05-18</td>
+            </tr>
+            <tr>
+              <td>15</td>
+              <td>dashboard</td>
+              <td>KB</td>
+              <td>2022-05-18</td>
+            </tr>
+            <tr>
+              <td>16</td>
+              <td>random</td>
+              <td>KB</td>
+              <td>2022-05-18</td>
+            </tr>
+          </tbody> -->
         </table>
       </div>
     </main>
