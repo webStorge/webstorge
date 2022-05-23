@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #363333;
+  background-color: #EDEDF5;
 }
 
 .login-wrapper{
@@ -16,7 +16,7 @@
   margin-left: auto;
   margin-right: auto;
   width:40%;
-  background: #363333;
+  background: #EDEDF5;
 }
 
 .login-form {
@@ -26,7 +26,7 @@
   height: 300px;
   font-family: "Arial Black", Gadget, sans-serif;
   text-transform: uppercase;
-  background: #363333;
+  background: #EDEDF5;
   color: #FFFFFF;
   padding:24px;
   font-size: 14px;
@@ -76,9 +76,8 @@
 }
 .form input {
   font-family: "Roboto", sans-serif;
-  border:none;
   outline:none;
-  background: #3d3d3d;
+  background: #FFFFFF;
   width: 100%;
   border-radius: 10px;
   margin: 0 0 15px;
@@ -89,7 +88,7 @@
 }
 
 .form input::placeholder {
-  color:#fefefe;
+  color:Black;
   opacity: 0.2;
 }
 .form button {
@@ -115,7 +114,7 @@
   font-size: 12px;
 }
 .form .message a {
-  color: #fefefe;
+  color: #0080ff;
   text-decoration: none;
   font-size:12px;
 }
