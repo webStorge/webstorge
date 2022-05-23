@@ -1,4 +1,4 @@
-<?php include  $_SERVER['DOCUMENT_ROOT']."/front-back(상훈)/php/db.php"; ?>
+<?php include  $_SERVER['DOCUMENT_ROOT']."/webstorge/php/db.php"; ?>
 <!doctype html>
 <html lang="en">
   <head>
