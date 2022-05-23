@@ -1,4 +1,4 @@
-<?php include  $_SERVER['DOCUMENT_ROOT']."/real01/php/db.php"; ?>
+<?php include  $_SERVER['DOCUMENT_ROOT']."/front-back(상훈)/php/db.php"; ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -130,13 +130,12 @@
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">모든 파일</h1>
-        <div class="btn-toolbar mb-2 mb-md-0">
-          <div class="btn-group me-2">    
-            <input id="my-input" type="file" />
-            <button type="button" id="uploadBtn" class="btn btn-sm btn-outline-secondary" onclick='onClickUpload()'>&nbsp업로드&nbsp</button>
-           <!-- <button type="button" class="btn btn-sm btn-outline-secondary" onclick='newPage("./download.html")'>다운로드</button> -->
-          </div>
-        </div>
+        	<form action="./php/upload.php" method="post" enctype="multipart/form-data">
+	        	<div class="btn-group me-2">    
+	            	<input id="my-input" type="file" name='my-input' onchange="form.submit()"/>
+	            	<button type="button" id="uploadBtn" class="btn btn-sm btn-outline-secondary" onclick='onClickUpload()'>&nbsp업로드&nbsp</button>
+	        	</div>
+	        </form>
       </div>
 
       <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
@@ -161,6 +160,7 @@
 		              <td onClick = "location.href='php/download.php?file=<?php echo $board['uname'] ?>'"><font size="5"><?php echo $board['name']; ?></font></td>
 		              <td><font size="5"><?php echo $board['size']; ?></font></td>
 		              <td><font size="5"><?php echo $board['date']; ?></font></td>
+		              <td><button type="button" id="btn" class="btn btn-warning"><font size="4">즐겨찾기</font></button></td>
 		              <td><button type="button" id="btn" class="btn btn-secondary btn-default" onClick = "location.href='php/delete.php?uname=<?php echo $board['uname'] ?>'"><font size="4">삭제</font></button></td>
 		            </tr>
 		        </tbody>
