@@ -25,7 +25,7 @@ body {}
   border-radius: .25em;
 }
 
-.filebox input[type="file"] {  /*       ï¿½ï¿½  ï¿½ê¸°ï¿½ */
+.filebox input[type="file"] {  /*       “œ  ¨ê¸°ê¸ */
   position: absolute;
   width: 1px;
   height: 1px;

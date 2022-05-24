@@ -1,4 +1,4 @@
-<?php include  $_SERVER['DOCUMENT_ROOT']."/front-back(sh)/php/db.php"; ?>
+<?php include  $_SERVER['DOCUMENT_ROOT']."/webstorge/php/db.php"; ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -105,7 +105,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./favorites-page.html">
+            <a class="nav-link" href="./favorites-page.php">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
                 <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
               </svg>
@@ -113,7 +113,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./trash-page.html">
+            <a class="nav-link" href="./trash-page.php">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                 <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
                 <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
@@ -128,7 +128,7 @@
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">모든 파일</h1>
-        	<form action="php/upload.php" method="post" enctype="multipart/form-data">
+        	<form action="/upload.php" method="post" enctype="multipart/form-data">
 	        	<div class="btn-group me-2">    
 	            	<input id="my-input" type="file" name='foo' onchange="form.submit()"/>
 	            	<button type="button" id="uploadBtn" class="btn btn-sm btn-outline-secondary" onclick='onClickUpload()'>&nbsp업로드&nbsp</button>
@@ -136,7 +136,7 @@
 	        </form>
       </div>
       <div class="table-responsive">
-        <table class="table table-striped table-sm">
+        <table class="table table-striped table-sm" style="table-layout: fixed" word-break:break-all;>
           <thead>
             <tr>
               <th scope="col"><font size="5">번호</th></font>
@@ -149,11 +149,11 @@
         	$sql = query("select * from FileDownload;");
         	$i = 0;
 			while($board=$sql->fetch_array())
-			{ ?>
+			{ if ($board['trush'] == 0) {?>
 				 <tbody>
 		            <tr>
 		              <td><font size="5"><?php echo $i; $i = $i +1;?></font></td>
-		              <td onClick = "location.href='php/download.php?file=<?php echo $board['uname'] ?>'"><font size="5"><?php echo $board['name']; ?></font></td>
+		              <td onClick = "location.href='php/download.php?file=<?php echo $board['uname'] ?>'" style="text-overflow:ellipsis; overflow:hidden"><font size="5"><?php echo $board['name']; ?></font></td>
 		              <td>
 			              <font size="5">
 				              <?php 
@@ -173,11 +173,11 @@
 			            	</font>
 		              </td>
 		              <td><font size="5"><?php echo $board['date']; ?></font></td>
-		              <td style='width:120px;'><button type="button" id="btn" class="btn btn-warning"><font size="4">즐겨찾기</font></button></td>
-		              <td><button type="button" id="btn" class="btn btn-secondary btn-default" onClick = "location.href='php/delete.php?uname=<?php echo $board['uname'] ?>'"><font size="4">삭제</font></button></td>
+		              <td onClick = "location.href='php/star.php?uname=<?php echo $board['uname'] ?>'" align="right"'><button type="button" id="btn" class="btn btn-warning"><font size="4">즐겨찾기</font></button></td>
+		              <td><button type="button" id="btn" class="btn btn-secondary btn-default" onClick = "location.href='php/trush.php?uname=<?php echo $board['uname'] ?>'"><font size="4">삭제</font></button></td>
 		            </tr>
 		        </tbody>
-		      <?php } ?>
+		      <?php } } ?>
          
           
         </table>

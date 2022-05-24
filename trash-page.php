@@ -1,3 +1,4 @@
+<?php include  $_SERVER['DOCUMENT_ROOT']."/webstorge/php/db.php"; ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -85,7 +86,7 @@
   <!-- <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search"> -->
   <div class="navbar-nav">
     <div class="nav-item text-nowrap">
-      <a class="nav-link px-3" href="./login_resist.html">Log out</a>
+      <a class="nav-link px-3" href="login_resist.html">Log out</a>
     </div>
   </div>
 </header>
@@ -104,7 +105,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./favorites-page.html">
+            <a class="nav-link" href="./favorites-page.php">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
                 <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
               </svg>
@@ -112,7 +113,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./trash-page.html">
+            <a class="nav-link" href="./trash-page.php">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                 <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
                 <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
@@ -126,124 +127,59 @@
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">즐겨찾기</h1>
+        <h1 class="h2">휴지통</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group me-2">    
-            <input id="my-input" type="file" />
-            <button type="button" id="uploadBtn" class="btn btn-sm btn-outline-secondary" onclick='onClickUpload()'>&nbsp업로드&nbsp</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" onclick='newPage("./delete-page.html")'>삭제</button>
           </div>
         </div>
       </div>
 
       <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
       <div class="table-responsive">
-        <table class="table table-striped table-sm">
+        <table class="table table-striped table-sm" style="table-layout: fixed">
           <thead>
             <tr>
-              <th scope="col"><font size='5'>번호<font size='5'></th>
-              <th scope="col"><font size='5'>파일명<font size='5'></th>
-              <th scope="col"><font size='5'>용량<font size='5'></th>
-              <th scope="col"><font size='5'>날짜<font size='5'></th>
+              <th scope="col"><font size ='5'>번호</font></th>
+              <th scope="col"><font size ='5'>파일명</font></th>
+              <th scope="col"><font size ='5'>용량</font></th>
+              <th scope="col"><font size ='5'>날짜</font></th>
             </tr>
           </thead>
-          <!-- <tbody>
-            <tr>
-              <td>1</td>
-              <td>random</td>
-              <td>MB</td>
-              <td>2022-05-18</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>placeholder</td>
-              <td>MB</td>
-              <td>2022-05-18</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>data</td>
-              <td>MB</td>
-              <td>2022-05-18</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>information</td>
-              <td>MB</td>
-              <td>2022-05-18</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>text</td>
-              <td>MB</td>
-              <td>2022-05-18</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>dashboard</td>
-              <td>MB</td>
-              <td>2022-05-18</td>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td>dashboard</td>
-              <td>MB</td>
-              <td>2022-05-18</td>
-            </tr>
-            <tr>
-              <td>8</td>
-              <td>placeholder</td>
-              <td>MB</td>
-              <td>2022-05-18</td>
-            </tr>
-            <tr>
-              <td>9</td>
-              <td>random</td>
-              <td>MB</td>
-              <td>2022-05-18</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>placeholder</td>
-              <td>KB</td>
-              <td>2022-05-18</td>
-            </tr>
-            <tr>
-              <td>11</td>
-              <td>data</td>
-              <td>KB</td>
-              <td>2022-05-18</td>
-            </tr>
-            <tr>
-              <td>12</td>
-              <td>information</td>
-              <td>KB</td>
-              <td>2022-05-18</td>
-            </tr>
-            <tr>
-              <td>13</td>
-              <td>text</td>
-              <td>GB</td>
-              <td>2022-05-18</td>
-            </tr>
-            <tr>
-              <td>14</td>
-              <td>dashboard</td>
-              <td>GB</td>
-              <td>2022-05-18</td>
-            </tr>
-            <tr>
-              <td>15</td>
-              <td>dashboard</td>
-              <td>KB</td>
-              <td>2022-05-18</td>
-            </tr>
-            <tr>
-              <td>16</td>
-              <td>random</td>
-              <td>KB</td>
-              <td>2022-05-18</td>
-            </tr>
-          </tbody> -->
+          <?php
+        	$sql = query("select * from FileDownload;");
+        	$i = 0;
+			while($board=$sql->fetch_array())
+			{ 
+				if ($board['trush'] == 1) {?>
+				 <tbody>
+		            <tr>
+		              <td><font size="5"><?php echo $i; $i = $i +1;?></font></td>
+		              <td onClick = "location.href='php/download.php?file=<?php echo $board['uname'] ?>'"><font size="5"><?php echo $board['name']; ?></font></td>
+		              <td>
+			              <font size="5">
+				              <?php 
+								    $value = $board['size'];
+								    if($value < 1024) {
+								        $value= round($value,2)  . "&nbsp Bytes";
+								    }
+								    else if($value < 1024000) {
+								       $value = round(($value / 1024 ),2) . "&nbsp KB";
+								    }
+								    else {
+								        $value = round(($value / 1024000),2) . "&nbsp MB";
+								    }
+								    echo $value;
+									
+				              ?>
+			            	</font>
+		              </td>
+		              <td><font size="5"><?php echo $board['date']; ?></font></td>
+		              <td onClick = "location.href='php/trush_delete.php?uname=<?php echo $board['uname'] ?>'" style='width:80px;'><button type="button" id="btn" class="btn btn-warning"><font size="4">복구</font></button></td>
+		              <td><button type="button" id="btn" class="btn btn-secondary btn-default" onClick = "location.href='php/delete.php?uname=<?php echo $board['uname'] ?>'"><font size="4">완전삭제</font></button></td>
+		            </tr>
+		        </tbody>
+		      <?php }} ?>
         </table>
       </div>
     </main>
