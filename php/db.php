@@ -1,6 +1,5 @@
 <?php
 //db ¿¬µ¿ 
-session_start();
 $db = new mysqli("localhost","root","Tkddyd@135","oss");
 $db->set_charset("utf8");
 

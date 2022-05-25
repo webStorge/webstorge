@@ -1,4 +1,4 @@
-body {margin: 10px}
+body {}
 .where {
   display: block;
   margin: 25px 15px;
@@ -36,6 +36,10 @@ body {margin: 10px}
   border: 0;
 }
 
+.mouseOver:hover {
+	color:blue;
+}
+
 #my-input {
     visibility:hidden;
 }
@@ -44,3 +48,8 @@ body {margin: 10px}
     border: 1px solid;
     border-radius: 2px;
  }
+#filename {
+	cursor: pointer; 
+	text-overflow:ellipsis; 
+	overflow:hidden
+}

@@ -10,27 +10,86 @@
     <title>CloudBox</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
-    <link rel="shortcut icon" type="image/x-icon" href="./icon_images/favicon.ico" />
-	<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./css/dashboard.css" rel="stylesheet">
-    <link href="./dashboard.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./icon_images/favicon.ico" />
     
+
+    
+
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="./css/dashboard.css" rel="stylesheet">
+    <script src="./js/function.js"> </script>
   </head>
   <body>
     
-	<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-	  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="./index.php">Cloud Box</a>
-	  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
-	  <div class="navbar-nav">
-	    <div class="nav-item text-nowrap">
-	      <a class="nav-link px-3" href="login/Logout.php">Log out</a>
-	    </div>
-	  </div>
-	</header>
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="./index.php">Cloud Box</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!-- <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search"> -->
+  <div class="navbar-nav">
+    <div class="nav-item text-nowrap">
+      <a class="nav-link px-3" href="./login_resist.html">Log out</a>
+    </div>
+  </div>
+</header>
 
 <div class="container-fluid">
   <div class="row">
@@ -38,7 +97,7 @@
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active"  aria-current="page" href="./index.php">
+            <a class="nav-link active" aria-current="page" href="./index.php">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
                 <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
                 </svg>
@@ -46,7 +105,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./favorites-page.php" style ="">
+            <a class="nav-link" href="./favorites-page.php">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
                 <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
               </svg>
@@ -63,7 +122,6 @@
             </a>
           </li>
         </ul>
-        
         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
           <span>설명서</span>
           <a class="link-secondary" href="#" aria-label="Add a new report"></a>
@@ -91,49 +149,55 @@
               휴지통이란?
             </a>
           </li>        
+      </div>        
       </div>
     </nav>
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">모든 파일</h1>
-        	<form action="/upload.php" method="post" enctype="multipart/form-data">
+        <h1 class="h2">즐겨찾기</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <form action="/upload.php" method="post" enctype="multipart/form-data">
 	        	<div class="btn-group me-2">    
 	            	<input id="my-input" type="file" name='foo' onchange="form.submit()"/>
 	            	<button type="button" id="uploadBtn" class="btn btn-sm btn-outline-secondary" onclick='onClickUpload()'>&nbsp업로드&nbsp</button>
 	        	</div>
 	        </form>
+        </div>
       </div>
+
+      <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
       <div class="table-responsive">
         <table class="table table-striped table-sm" style="table-layout: fixed">
           <thead>
             <tr>
-              <th scope="col"><font size="5">번호</th></font>
-              <th scope="col"><font size="5">파일명</th></font>
+              <th scope="col"><font size='5'>번호<font size='5'></th>
+              <th scope="col"><font size='5'>파일명<font size='5'></th>
               <th scope="col"><font size="5">확장자</th></font>
-              <th scope="col"><font size="5">용량</th></font>
-              <th scope="col"><font size="5">날짜</th></font>
+              <th scope="col"><font size='5'>용량<font size='5'></th>
+              <th scope="col"><font size='5'>날짜<font size='5'></th>
             </tr>
           </thead>
           <?php
         	$sql = query("select * from FileDownload;");
         	$i = 0;
 			while($board=$sql->fetch_array())
-			{ if ($board['trush'] == 0) {?>
+			{ 
+				if ($board['star'] == 1) {?>
 				 <tbody>
 		            <tr>
 		              <td><font size="5"><?php echo $i; $i = $i +1;?></font></td>
-		              
-		              <!-- 파일명 -->
-		              <td nowrap onClick = "location.href='php/download.php?file=<?php echo $board['uname'] ?>'" style="text-overflow:ellipsis; overflow:hidden; cursor:pointer;">
-		              <font class="mouseOver" size="5">
-			              <?php>
-				              $filename = $board['name'];
-				              $without_extension = pathinfo($filename, PATHINFO_FILENAME);
-				              echo $without_extension;
-			              ?>
-		              </font>
-		              </td>
+		               
+		               <!-- 파일명 -->
+		              <td nowrap onClick = "location.href='php/download.php?file=<?php echo $board['uname'] ?>'" style="text-overflow:ellipsis; overflow:hidden; cursor:pointer;";>
+							<font class="mouseOver" size="5">
+								<?php>
+									$filename = $board['name'];
+						 			$without_extension = pathinfo($filename, PATHINFO_FILENAME);
+									echo $without_extension;
+								?>
+							</font>
+						</td>
 		              
 		              <!-- 확장자 -->
 		              <td nowrap ><font size='5'>
@@ -145,8 +209,8 @@
 						?> 
 						</font>
 		              </td>
-		             
-		              <!-- 파일사이즈 -->
+						
+						<!-- 파일사이즈 -->
 		              <td>
 			              <font size="5">
 				              <?php 
@@ -166,13 +230,11 @@
 			            	</font>
 		              </td>
 		              <td nowrap style="text-overflow:ellipsis; overflow:hidden"><font size="5"><?php echo $board['date']; ?></font></td>
-		              <td onClick = "location.href='php/star.php?uname=<?php echo $board['uname'] ?>'" align="right"'><button type="button" id="btn" class="btn btn-warning"><font size="4">즐겨찾기</font></button></td>
-		              <td><button type="button" id="btn" class="btn btn-secondary btn-default" onClick = "location.href='php/trush.php?uname=<?php echo $board['uname'] ?>'"><font size="4">삭제</font></button></td>
+		              <td></td>
+		              <td onClick = "location.href='php/star_delete.php?uname=<?php echo $board['uname'] ?>'" align="left"''><button type="button" id="btn" class="btn btn-warning"><font size="4">즐겨찾기 삭제</font></button></td>
 		            </tr>
 		        </tbody>
-		      <?php } } ?>
-         
-          
+		      <?php }} ?>
         </table>
       </div>
     </main>
@@ -182,9 +244,6 @@
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
-      <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
-      <script src="./js/dashboard.js"></script>
-      <script src="./js/function.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="./js/dashboard.js"></script>
   </body>
 </html>
