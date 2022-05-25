@@ -122,6 +122,34 @@
             </a>
           </li>
         </ul>
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span>설명서</span>
+          <a class="link-secondary" href="#" aria-label="Add a new report"></a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link" href="./Readme/Readme.html">
+              <span data-feather="file-text"></span>
+              Cloud Box
+            </a>
+            <a class="nav-link" href="./Readme/uploadWay.html">
+              <span data-feather="file-text"></span>
+              업로드 방법
+            </a>
+            <a class="nav-link" href="./Readme/downloadWay.html">
+              <span data-feather="file-text"></span>
+              다운로드 방법
+            </a>
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              즐겨찾기란?
+            </a>
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              휴지통이란?
+            </a>
+          </li>        
+      </div>        
       </div>
     </nav>
 
@@ -130,7 +158,6 @@
         <h1 class="h2">휴지통</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group me-2">    
-            <button type="button" class="btn btn-sm btn-outline-secondary" onclick='newPage("./delete-page.html")'>삭제</button>
           </div>
         </div>
       </div>
@@ -142,6 +169,7 @@
             <tr>
               <th scope="col"><font size ='5'>번호</font></th>
               <th scope="col"><font size ='5'>파일명</font></th>
+              <th scope="col"><font size="5">확장자</th></font>
               <th scope="col"><font size ='5'>용량</font></th>
               <th scope="col"><font size ='5'>날짜</font></th>
             </tr>
@@ -155,7 +183,31 @@
 				 <tbody>
 		            <tr>
 		              <td><font size="5"><?php echo $i; $i = $i +1;?></font></td>
-		              <td onClick = "location.href='php/download.php?file=<?php echo $board['uname'] ?>'"><font size="5"><?php echo $board['name']; ?></font></td>
+		              
+		              <!-- 파일명 -->
+		              <td nowrap style="text-overflow:ellipsis; overflow:hidden">
+		              <font size="5">
+			              <?php>
+				              $filename = $board['name'];
+				              $without_extension = pathinfo($filename, PATHINFO_FILENAME);
+				              echo $without_extension;
+			              ?>
+		              </font>
+		              </td>
+		              
+		              
+		              <!-- 확장자 -->
+		              <td nowrap ><font size='5'>
+		            	<?php 
+							$path = $board['uname'];
+							$file = new SplFileInfo($path);
+							$extension  = $file->getExtension();
+							echo $extension;  
+						?> 
+						</font>
+		              </td>			              
+		              
+		              <!-- 파일 사이즈 -->
 		              <td>
 			              <font size="5">
 				              <?php 
@@ -174,8 +226,9 @@
 				              ?>
 			            	</font>
 		              </td>
-		              <td><font size="5"><?php echo $board['date']; ?></font></td>
-		              <td onClick = "location.href='php/trush_delete.php?uname=<?php echo $board['uname'] ?>'" style='width:80px;'><button type="button" id="btn" class="btn btn-warning"><font size="4">복구</font></button></td>
+		             	              
+		              <td nowrap style="text-overflow:ellipsis; overflow:hidden"><font size="5"><?php echo $board['date']; ?></font></td>
+		              <td onClick = "location.href='php/trush_delete.php?uname=<?php echo $board['uname'] ?>'" style='width:80px;' align="right"><button type="button" id="btn" class="btn btn-warning"><font size="4">복구</font></button></td>
 		              <td><button type="button" id="btn" class="btn btn-secondary btn-default" onClick = "location.href='php/delete.php?uname=<?php echo $board['uname'] ?>'"><font size="4">완전삭제</font></button></td>
 		            </tr>
 		        </tbody>

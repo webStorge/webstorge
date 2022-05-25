@@ -36,6 +36,10 @@ body {}
   border: 0;
 }
 
+.mouseOver:hover {
+	color:blue;
+}
+
 #my-input {
     visibility:hidden;
 }
@@ -44,3 +48,8 @@ body {}
     border: 1px solid;
     border-radius: 2px;
  }
+#filename {
+	cursor: pointer; 
+	text-overflow:ellipsis; 
+	overflow:hidden
+}
