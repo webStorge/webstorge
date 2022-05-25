@@ -82,11 +82,11 @@
               <span data-feather="file-text"></span>
               다운로드 방법
             </a>
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="./Readme/favoriteWay.html">
               <span data-feather="file-text"></span>
               즐겨찾기란?
             </a>
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="./Readme/trashWay.html">
               <span data-feather="file-text"></span>
               휴지통이란?
             </a>
